@@ -136,7 +136,7 @@ const translations = {
     contact_quote_desc: "Hemos simplificado nuestro canal de atención. Haz clic abajo para conversar directamente con nuestro equipo de ingeniería. Podrás compartirnos planos, croquis y requerimientos de obra sin formularios intermedios.",
     contact_quote_btn: "Solicitar Cotización por WhatsApp",
     contact_reply_time: "Respuesta promedio: Menos de 15 minutos",
-    contact_whatsapp_text: "Hola! Me gustaría hacer una cotización",
+    contact_whatsapp_text: "Hola ALARIFE CONSTRUCCIONES, los contacto desde su sitio web (alarifeconstrucciones.com). Me gustaría solicitar una cotización para mi proyecto.",
 
     // Footer
     footer_desc: "Estudio constructivo especializado en drywall de alta gama, plafones de diseño, iluminación integrada y remodelaciones comerciales y hoteleras en Quintana Roo.",
@@ -268,7 +268,7 @@ const translations = {
     contact_quote_desc: "We have simplified our communication. Click below to talk directly with our engineering team. You can share plans, sketches, and work requirements without intermediate forms.",
     contact_quote_btn: "Request Quote via WhatsApp",
     contact_reply_time: "Average response: Under 15 minutes",
-    contact_whatsapp_text: "Hello! I would like to get a quote",
+    contact_whatsapp_text: "Hello ALARIFE CONSTRUCCIONES, I'm reaching out from your website (alarifeconstrucciones.com). I'd like to request a quote for my project.",
 
     // Footer
     footer_desc: "Constructive studio specialized in high-end drywall, designer ceilings, integrated lighting, and commercial and hotel remodeling in Quintana Roo.",

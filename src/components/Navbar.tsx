@@ -70,10 +70,10 @@ export default function Navbar() {
             className="flex items-center group relative"
           >
             <div className={`relative transition-all duration-500 select-none ${
-              isScrolled ? "w-24 h-12" : "w-28 h-14"
+              isScrolled ? "w-48 h-24" : "w-56 h-28"
             }`}>
               <Image
-                src="/logo.png"
+                src="/logo-light.png"
                 alt="ALARIFE CONSTRUCCIONES"
                 fill
                 priority
@@ -192,10 +192,10 @@ export default function Navbar() {
                   e.preventDefault();
                   handleLinkClick("#inicio");
                 }}
-                className="relative w-24 h-12 select-none"
+                className="relative w-48 h-24 select-none"
               >
                 <Image
-                  src="/logo.png"
+                  src="/logo-light.png"
                   alt="ALARIFE CONSTRUCCIONES"
                   fill
                   priority

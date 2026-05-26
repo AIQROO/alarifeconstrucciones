@@ -116,40 +116,38 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* 4x2 Clean Minimalist Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        {/* Editorial Service Grid — full info, no empty space */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 w-full border border-white/5 rounded-2xl overflow-hidden">
           {servicesData.map((service, idx) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <motion.article
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.06 }}
-                className="group relative aspect-square overflow-hidden bg-[#141414] border border-white/5 flex flex-col justify-between p-6 cursor-pointer hover:bg-[#1E1E1E] hover:border-brand-olive/35 hover:shadow-2xl hover:shadow-brand-olive/5 transition-all duration-500 rounded-2xl"
+                transition={{ duration: 0.55, delay: idx * 0.05 }}
+                className="group relative bg-[#101010] p-7 lg:p-8 flex flex-col gap-5 hover:bg-[#161616] transition-colors duration-500"
               >
-                {/* Dynamic top highlight indicator */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-brand-olive scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <span className="absolute top-0 left-0 right-0 h-px bg-brand-olive scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
 
-                {/* Card Top: Icon with thin line stroke */}
-                <div className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-taupe group-hover:bg-brand-olive group-hover:border-brand-olive group-hover:text-white transition-all duration-500">
-                  <Icon className="w-4.5 h-4.5 shrink-0" strokeWidth={1.2} />
+                <div className="flex items-start justify-between gap-4">
+                  <div className="w-12 h-12 rounded-full border border-white/10 bg-white/[0.03] flex items-center justify-center text-brand-taupe group-hover:border-brand-olive group-hover:text-brand-olive transition-colors duration-500">
+                    <Icon className="w-5 h-5" strokeWidth={1.2} />
+                  </div>
+                  <span className="text-[10px] tracking-[0.25em] font-light text-white/25 mt-2">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
                 </div>
 
-                {/* Card Bottom: Animated Title & Description */}
-                <div className="flex flex-col items-start w-full transition-all duration-500 transform group-hover:-translate-y-1">
-                  {/* Title: Elegant Serif Font */}
-                  <h4 className="font-display text-lg font-light text-white tracking-wide leading-snug">
-                    {service.title}
-                  </h4>
+                <h4 className="font-display text-xl font-light text-white tracking-wide leading-snug">
+                  {service.title}
+                </h4>
 
-                  {/* Description: Clean, sophisticated sans-serif description that fades in */}
-                  <p className="text-xs font-light text-white/50 leading-relaxed max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 ease-in-out overflow-hidden font-sans">
-                    {service.description}
-                  </p>
-                </div>
-              </motion.div>
+                <p className="text-xs font-light text-white/55 leading-relaxed font-sans">
+                  {service.description}
+                </p>
+              </motion.article>
             );
           })}
         </div>

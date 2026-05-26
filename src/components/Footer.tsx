@@ -32,9 +32,9 @@ export default function Footer() {
           
           {/* Brand Presentation Column */}
           <div className="md:col-span-5 flex flex-col items-start text-left">
-            <div className="relative w-36 h-18 mb-6 select-none pointer-events-none">
+            <div className="relative w-72 h-36 mb-6 -ml-2 select-none pointer-events-none">
               <Image
-                src="/logo.png"
+                src="/logo-light.png"
                 alt="ALARIFE CONSTRUCCIONES"
                 fill
                 className="object-contain object-left"
