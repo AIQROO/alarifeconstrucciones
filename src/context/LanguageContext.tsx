@@ -1,6 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext } from "react";
+import { useRouter } from "next/navigation";
 
 type Language = "es" | "en";
 
@@ -281,30 +282,21 @@ const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>("en");
+export const LanguageProvider: React.FC<{
+  children: React.ReactNode;
+  lang: Language;
+}> = ({ children, lang }) => {
+  const router = useRouter();
 
-  useEffect(() => {
-    const stored = localStorage.getItem("alarife_lang") as Language;
-    if (stored === "es" || stored === "en") {
-      setLanguageState(stored);
-      document.documentElement.lang = stored;
-      return;
-    }
-    const browserLang = navigator.language.slice(0, 2);
-    const detected: Language = browserLang === "es" ? "es" : "en";
-    setLanguageState(detected);
-    document.documentElement.lang = detected;
-  }, []);
-
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem("alarife_lang", lang);
-    document.documentElement.lang = lang;
+  const setLanguage = (next: Language) => {
+    if (next === lang) return;
+    const hash =
+      typeof window !== "undefined" ? window.location.hash : "";
+    router.push(`/${next}${hash}`);
   };
 
   const t = (key: string) => {
-    const dict = translations[language] as any;
+    const dict = translations[lang] as any;
     if (dict && dict[key] !== undefined) {
       return dict[key];
     }
@@ -313,7 +305,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language: lang, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
