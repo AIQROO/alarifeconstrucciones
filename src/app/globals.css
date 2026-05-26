@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FCFAF7;
+  --foreground: #0B0B0B;
+  --brand-white: #FCFAF7;
+  --brand-black: #0B0B0B;
+  --brand-charcoal: #1C1C1C;
+  --brand-beige: #F5F2EB;
+  --brand-taupe: #D9D2C9;
+  --brand-olive: #4E5445;
+  --brand-concrete: #E5E5E5;
+}
+
+@theme {
+  --color-brand-white: var(--brand-white);
+  --color-brand-black: var(--brand-black);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-beige: var(--brand-beige);
+  --color-brand-taupe: var(--brand-taupe);
+  --color-brand-olive: var(--brand-olive);
+  --color-brand-concrete: var(--brand-concrete);
+  --font-sans: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+}
+
+/* Custom Scroll Behavior and General Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Soft ambient lighting effect representing indirect LED architecture style */
+.led-glow {
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  mix-blend-mode: plus-lighter;
+}
+
+.led-glow-sm {
+  filter: blur(40px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Fine architectural line style */
+.arch-grid-line {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.arch-grid-line-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Custom selection */
+::selection {
+  background-color: var(--brand-olive);
+  color: var(--brand-white);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-taupe);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-olive);
+}
+
+/* Text utility for subtle luxury tracking */
+.tracking-architect {
+  letter-spacing: 0.15em;
+}
+
+.tracking-editorial {
+  letter-spacing: 0.08em;
+}
+
+/* Utility to overlay slow panning parallax background in hero */
+@keyframes pan-slow {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.05) translate(-1%, -0.5%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.animate-pan-slow {
+  animation: pan-slow 25s ease-in-out infinite;
+}
