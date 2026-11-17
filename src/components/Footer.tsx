@@ -99,7 +99,8 @@ export default function Footer() {
         {/* Footer Bottom Metadata */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-[10px] font-light text-white/40 tracking-wider text-center md:text-left">
-            {t("footer_rights").replace("{year}", new Date().getFullYear().toString())}
+            {t("footer_rights").replace("{year}", new Date().getFullYear().toString())} · Dropped by{" "}
+            <a href="https://acidmkt.com/" target="_blank" rel="noopener" className="underline hover:text-white/70">Acid MKT</a>
             <span className="block md:inline md:ml-2 text-[9px] text-white/20">{t("footer_sub")}</span>
           </p>
 
